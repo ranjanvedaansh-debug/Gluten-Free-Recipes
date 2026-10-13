@@ -70,16 +70,38 @@ players.forEach(function (player) {
   }
 
   // Drag the seek bar to jump to any part of the video
+  var wasPlaying = false;
+
+  function jumpTo(percent) {
+    if (!video.duration) return;
+    var newTime = (percent / 100) * video.duration;
+    timeText.textContent = formatTime(newTime) + " / " + formatTime(video.duration);
+    // only ask for a new frame when the last one has loaded (keeps dragging smooth online)
+    if (!video.seeking) {
+      video.currentTime = newTime;
+    }
+  }
+
+  // while dragging: pause, move the bar and show the frame under the handle
   seekBar.addEventListener("input", function () {
-    dragging = true;
+    if (!dragging) {
+      dragging = true;
+      wasPlaying = !video.paused;
+      video.pause();
+    }
     seekBar.style.setProperty("--progress", seekBar.value + "%");
+    jumpTo(seekBar.value);
+  });
+
+  // when you let go: jump to the exact spot and carry on playing if it was playing
+  seekBar.addEventListener("change", function () {
     if (video.duration) {
       video.currentTime = (seekBar.value / 100) * video.duration;
-      timeText.textContent = formatTime(video.currentTime) + " / " + formatTime(video.duration);
     }
-  });
-  seekBar.addEventListener("change", function () {
     dragging = false;
+    if (wasPlaying) {
+      video.play();
+    }
   });
   video.addEventListener("timeupdate", updateTime);
   video.addEventListener("loadedmetadata", updateTime);
