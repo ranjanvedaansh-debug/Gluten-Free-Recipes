@@ -1,6 +1,6 @@
 /* =========================================================
    script.js – used by every page
-   1. Video buttons (play/pause, back 5s, forward 5s)
+   1. Video buttons (play/pause, back 5s, forward 5s) + seek bar
    2. Mobile menu + Recipes dropdown
    3. Tick off ingredients
    4. Print recipe button
@@ -24,6 +24,8 @@ players.forEach(function (player) {
   var backBtn = player.querySelector(".btn-back");
   var forwardBtn = player.querySelector(".btn-forward");
   var timeText = player.querySelector(".vc-time");
+  var seekBar = player.querySelector(".vc-seek");
+  var dragging = false;
 
   // Play or pause
   function togglePlay() {
@@ -57,10 +59,28 @@ players.forEach(function (player) {
     video.currentTime = Math.min(video.duration || 0, video.currentTime + 5);
   });
 
-  // Show the time, e.g. "0:35 / 3:20"
+  // Show the time, e.g. "0:35 / 3:20", and move the seek bar along
   function updateTime() {
     timeText.textContent = formatTime(video.currentTime) + " / " + formatTime(video.duration);
+    if (!dragging && video.duration) {
+      var percent = (video.currentTime / video.duration) * 100;
+      seekBar.value = percent;
+      seekBar.style.setProperty("--progress", percent + "%");
+    }
   }
+
+  // Drag the seek bar to jump to any part of the video
+  seekBar.addEventListener("input", function () {
+    dragging = true;
+    seekBar.style.setProperty("--progress", seekBar.value + "%");
+    if (video.duration) {
+      video.currentTime = (seekBar.value / 100) * video.duration;
+      timeText.textContent = formatTime(video.currentTime) + " / " + formatTime(video.duration);
+    }
+  });
+  seekBar.addEventListener("change", function () {
+    dragging = false;
+  });
   video.addEventListener("timeupdate", updateTime);
   video.addEventListener("loadedmetadata", updateTime);
 });
