@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gluten-free Vanilla Cake recipe with video.">
+  <title>Vanilla Cake | Gluten Free, Full of Flavour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/recipe.css">
+</head>
+<body>
+
+  <!-- ===== Title bar ===== -->
+  <header class="site-header">
+    <a href="index.html" class="site-title">Gluten Free, Full of Flavour</a>
+    <p class="tagline">Simple gluten-free recipes that actually taste good</p>
+  </header>
+
+  <!-- ===== Navigation bar ===== -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">&#9776; Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <button class="dropdown-toggle active" aria-expanded="false">Recipes <span class="arrow">&#9662;</span></button>
+        <ul class="dropdown-menu">
+          <li><a href="quesadilla.html">Quesadilla</a></li>
+          <li><a href="vanilla-cake.html" class="active" aria-current="page">Vanilla Cake</a></li>
+          <li><a href="orange-cake.html">Orange Cake</a></li>
+          <li><a href="peanut-butter-cookies.html">Peanut Butter Cookies</a></li>
+          <li><a href="honey-chilli-potato.html">Honey Chilli Potato</a></li>
+          <li><a href="ragi-cookies.html">Ragi Cookies</a></li>
+          <li><a href="ragi-cupcakes.html">Ragi Cupcakes</a></li>
+          <li><a href="paneer-roll.html">Paneer Roll</a></li>
+          <li><a href="chicken-roll.html">Chicken Roll</a></li>
+          <li><a href="paneer-cubes.html">Paneer Cubes</a></li>
+          <li><a href="pizza.html">Pizza</a></li>
+          <li><a href="bread-squares.html">Bread Squares</a></li>
+        </ul>
+      </li>
+      <li><a href="gf-contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Main content ===== -->
+  <main class="recipe">
+    <div class="title-row">
+      <div>
+        <h1 class="recipe-title">Vanilla Cake</h1>
+        <p class="recipe-blurb">A soft, fluffy gluten-free vanilla sponge.</p>
+      </div>
+      <button class="btn btn-print" type="button">&#128424;&#xFE0E; Print recipe</button>
+    </div>
+
+    <div class="recipe-layout">
+
+      <!-- Left column: video + pictures -->
+      <div class="media-column">
+        <div class="video-player">
+          <video src="videos/vanilla-cake.mp4" preload="metadata" playsinline>
+            Sorry, your browser can't play this video.
+          </video>
+          <div class="video-controls">
+            <button class="vc-btn btn-back" aria-label="Go back 5 seconds">&#9664;&#xFE0E;&#9664;&#xFE0E; 5s</button>
+            <button class="vc-btn btn-play" aria-label="Play">&#9654; Play</button>
+            <button class="vc-btn btn-forward" aria-label="Skip forward 5 seconds">5s &#9654;&#xFE0E;&#9654;&#xFE0E;</button>
+            <span class="vc-time">0:00 / 0:00</span>
+          </div>
+        </div>
+
+        <div class="recipe-photos">
+          <figure class="photo"><img src="images/vanilla-cake-1.jpg" alt="Vanilla Cake, photo 1" loading="lazy"></figure>
+          <figure class="photo"><img src="images/vanilla-cake-2.jpg" alt="Vanilla Cake, photo 2" loading="lazy"></figure>
+        </div>
+      </div>
+
+      <!-- Right column: ingredients + method -->
+      <div class="text-column">
+        <section class="card ingredients">
+          <h2>Ingredients</h2>
+          <p class="hint">Tap an ingredient to tick it off as you go.</p>
+          <ul>
+          <li>Eggs – 3</li>
+          <li>Sugar – ⅔ cup</li>
+          <li>Oil – ½ cup</li>
+          <li>Gluten-free flour – 1 cup</li>
+          <li>Baking powder – 1 tsp</li>
+          <li>Baking soda – ½ tsp</li>
+          <li>Milk – ¼ cup</li>
+          <li>Vanilla essence – 1 tsp</li>
+          </ul>
+        </section>
+
+        <section class="card method">
+          <h2>Method</h2>
+          <ol>
+          <li>Gather all the ingredients.</li>
+          <li>Crack all the eggs into one bowl.</li>
+          <li>Add the sugar.</li>
+          <li>Beat with a hand mixer until creamy.</li>
+          <li>Add the oil.</li>
+          <li>Beat with a hand mixer until there is no trace of oil.</li>
+          <li>Sift the flour, baking powder and baking soda into the batter.</li>
+          <li>Mix well.</li>
+          <li>Add the milk and vanilla essence.</li>
+          <li>Mix well.</li>
+          <li>Pour the batter into a greased and lined 6-inch baking pan.</li>
+          <li>Bake in a preheated oven at 170°C for 25–30 minutes.</li>
+          <li>Serve warm or cold.</li>
+          </ol>
+        </section>
+      </div>
+
+    </div>
+
+    <!-- Previous / next recipe -->
+    <nav class="recipe-pager" aria-label="More recipes">
+      <a class="pager-link prev" href="quesadilla.html"><span class="pager-label">&larr; Previous recipe</span><span class="pager-name">Quesadilla</span></a>
+      <a class="pager-link next" href="orange-cake.html"><span class="pager-label">Next recipe &rarr;</span><span class="pager-name">Orange Cake</span></a>
+    </nav>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <p>Gluten Free, Full of Flavour</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

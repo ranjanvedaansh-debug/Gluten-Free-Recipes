@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gluten-free recipes that are easy to make and full of flavour.">
+  <title>Home | Gluten Free, Full of Flavour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- ===== Title bar ===== -->
+  <header class="site-header">
+    <a href="index.html" class="site-title">Gluten Free, Full of Flavour</a>
+    <p class="tagline">Simple gluten-free recipes that actually taste good</p>
+  </header>
+
+  <!-- ===== Navigation bar ===== -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">&#9776; Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+      <li class="dropdown">
+        <button class="dropdown-toggle" aria-expanded="false">Recipes <span class="arrow">&#9662;</span></button>
+        <ul class="dropdown-menu">
+          <li><a href="quesadilla.html">Quesadilla</a></li>
+          <li><a href="vanilla-cake.html">Vanilla Cake</a></li>
+          <li><a href="orange-cake.html">Orange Cake</a></li>
+          <li><a href="peanut-butter-cookies.html">Peanut Butter Cookies</a></li>
+          <li><a href="honey-chilli-potato.html">Honey Chilli Potato</a></li>
+          <li><a href="ragi-cookies.html">Ragi Cookies</a></li>
+          <li><a href="ragi-cupcakes.html">Ragi Cupcakes</a></li>
+          <li><a href="paneer-roll.html">Paneer Roll</a></li>
+          <li><a href="chicken-roll.html">Chicken Roll</a></li>
+          <li><a href="paneer-cubes.html">Paneer Cubes</a></li>
+          <li><a href="pizza.html">Pizza</a></li>
+          <li><a href="bread-squares.html">Bread Squares</a></li>
+        </ul>
+      </li>
+      <li><a href="gf-contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Main content ===== -->
+  <main class="home">
+
+    <!-- Top row: two text columns + one picture -->
+    <section class="intro-row">
+      <article class="text-card">
+        <h2>What is gluten, and why does it matter?</h2>
+        <p><strong>Gluten</strong> is a protein found in wheat, barley and rye. It's what makes dough stretchy, so it's hidden in lots of everyday foods like roti, bread, pasta, biscuits and even some sauces.</p>
+        <p><strong>Celiac disease</strong> is an autoimmune condition. When someone with celiac disease eats gluten, their immune system attacks the lining of their small intestine, which stops the body absorbing nutrients properly. It affects around 1 in 100 people, and many don't even know they have it.</p>
+        <p><strong>Gluten intolerance</strong> (also called gluten sensitivity) causes symptoms like bloating, stomach pain, tiredness and headaches, but without the intestinal damage. For both, the only real treatment is avoiding gluten completely.</p>
+      </article>
+
+      <article class="text-card">
+        <h2>Why I made this website</h2>
+        <p>Going gluten-free can feel really limiting. There still aren't many gluten-free options in shops and restaurants, and honestly, a lot of the ones that do exist just don't taste very good.</p>
+        <p>On top of that, not many people know what gluten is or why some of us can't eat it. That makes eating out, family dinners and even school lunches harder than they need to be.</p>
+        <p>So I created this website to share <strong>12 gluten-free recipes</strong> I make at home, from cakes and cookies to rolls and pizza. Each one has a video, so you can cook along step by step. I hope it shows that gluten-free food can be <em>easy, tasty and for everyone</em>.</p>
+        <a class="btn" href="#recipes">See all recipes &darr;</a>
+      </article>
+
+      <figure class="photo photo-tall">
+        <img src="https://images.unsplash.com/photo-1523294587484-bae6cc870010?auto=format&fit=crop&w=1200&q=80" alt="Cookies, bread and wheat stalks on a table">
+      </figure>
+    </section>
+
+    <!-- Bottom row: three pictures -->
+    <section class="photo-row">
+      <figure class="photo"><img src="https://images.unsplash.com/photo-1642541386804-803d73509fa2?auto=format&fit=crop&w=1200&q=80" alt="A hand holding a frosted cupcake" loading="lazy"></figure>
+      <figure class="photo"><img src="https://images.unsplash.com/photo-1511690078903-71dc5a49f5e3?auto=format&fit=crop&w=1200&q=80" alt="Assorted tacos on a wooden plate" loading="lazy"></figure>
+      <figure class="photo"><img src="https://images.unsplash.com/photo-1574484152510-903878da786c?auto=format&fit=crop&w=1200&q=80" alt="A bowl of colourful spices" loading="lazy"></figure>
+    </section>
+
+    <!-- All 12 recipes as cards -->
+    <section class="recipe-cards" id="recipes">
+      <h2>All 12 recipes</h2>
+      <div class="card-grid">
+        <a class="recipe-card" href="quesadilla.html">
+          <figure class="photo"><img src="images/quesadilla-1.jpg" alt="Quesadilla" loading="lazy"></figure>
+          <div class="rc-body">
+            <h3>Quesadilla</h3>
+            <p>A crispy, cheesy quesadilla stuffed with veggies and paneer.</p>
+          </div>
+        </a>
+        <a class="recipe-card" href="vanilla-cake.html">
+          <figure class="photo"><img src="images/vanilla-cake-1.jpg" alt="Vanilla Cake" loading="lazy"></figure>
+          <div class="rc-body">
+            <h3>Vanilla Cake</h3>
+            <p>A soft, fluffy gluten-free vanilla sponge.</p>
+          </div>
+        </a>
+        <a class="recipe-card" href="orange-cake.html">
+          <figure class="photo"><img src="images/orange-cake-1.jpg" alt="Orange Cake" loading="lazy"></figure>
+          <div class="rc-body">
+            <h3>Orange Cake</h3>
+            <p>A zesty orange cake with a sweet orange glaze.</p>
+          </div>
+        </a>
+        <a class="recipe-card" href="peanut-butter-cookies.html">
+          <figure class="photo"><img src="images/peanut-butter-cookies-1.jpg" alt="Peanut Butter Cookies" loading="lazy"></figure>
+          <div class="rc-body">
+            <h3>Peanut Butter Cookies</h3>
+            <p>Just three ingredients for chewy, nutty cookies.</p>
+          </div>
+        </a>
+        <a class="recipe-card" href="honey-chilli-potato.html">
+          <figure class="photo"><img src="images/honey-chilli-potato-1.jpg" alt="Honey Chilli Potato" loading="lazy"></figure>
+          <div class="rc-body">
+            <h3>Honey Chilli Potato</h3>
+            <p>Crispy fries tossed in a sweet, spicy and sticky sauce.</p>
+          </div>
+        </a>
+        <a class="recipe-card" href="ragi-cookies.html">
+          <figure class="photo"><img src="images/ragi-cookies-1.jpg" alt="Ragi Cookies" loading="lazy"></figure>
+          <div class="rc-body">
+            <h3>Ragi Cookies</h3>
+            <p>Chocolatey cookies made with wholesome ragi flour.</p>
+          </div>
+        </a>
+        <a class="recipe-card" href="ragi-cupcakes.html">
+          <figure class="photo"><img src="images/ragi-cupcakes-1.jpg" alt="Ragi Cupcakes" loading="lazy"></figure>
+          <div class="rc-body">
+            <h3>Ragi Cupcakes</h3>
+            <p>Rich chocolate cupcakes made with ragi flour.</p>
+          </div>
+        </a>
+        <a class="recipe-card" href="paneer-roll.html">
+          <figure class="photo"><img src="images/paneer-roll-1.jpg" alt="Paneer Roll" loading="lazy"></figure>
+          <div class="rc-body">
+            <h3>Paneer Roll</h3>
+            <p>Spicy marinated paneer wrapped in a soft gluten-free roti.</p>
+          </div>
+        </a>
+        <a class="recipe-card" href="chicken-roll.html">
+          <figure class="photo"><img src="images/chicken-roll-1.jpg" alt="Chicken Roll" loading="lazy"></figure>
+          <div class="rc-body">
+            <h3>Chicken Roll</h3>
+            <p>Tender spiced chicken rolled up in a gluten-free roti.</p>
+          </div>
+        </a>
+        <a class="recipe-card" href="paneer-cubes.html">
+          <figure class="photo"><img src="images/paneer-cubes-1.jpg" alt="Paneer Cubes" loading="lazy"></figure>
+          <div class="rc-body">
+            <h3>Paneer Cubes</h3>
+            <p>Golden, crunchy fried paneer bites.</p>
+          </div>
+        </a>
+        <a class="recipe-card" href="pizza.html">
+          <figure class="photo"><img src="images/pizza-1.jpg" alt="Pizza" loading="lazy"></figure>
+          <div class="rc-body">
+            <h3>Pizza</h3>
+            <p>A homemade gluten-free pizza loaded with toppings.</p>
+          </div>
+        </a>
+        <a class="recipe-card" href="bread-squares.html">
+          <figure class="photo"><img src="images/bread-squares-1.jpg" alt="Bread Squares" loading="lazy"></figure>
+          <div class="rc-body">
+            <h3>Bread Squares</h3>
+            <p>Quick, cheesy air-fried bread bites.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <p class="disclaimer">This website shares recipes, not medical advice. If you think you might have celiac disease, please speak to a doctor before cutting out gluten.</p>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <p>Gluten Free, Full of Flavour</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

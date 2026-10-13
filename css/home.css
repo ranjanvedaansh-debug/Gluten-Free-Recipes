@@ -1,0 +1,342 @@
+/* =========================================================
+   SHARED STYLES (title bar, nav bar, footer)
+   This section is the same in all 3 CSS files.
+   If you change it here, change it in the other two as well.
+   ========================================================= */
+
+:root {
+  --title-bar: #868880;     /* grey title bar (from sketch) */
+  --nav-bar: #9cc5bb;       /* sage nav bar (from sketch) */
+  --page-bg: #d4fbe6;       /* mint page background (from sketch) */
+  --card-bg: #f7fffa;
+  --text: #1e2a24;
+  --muted: #4b5d54;
+  --accent: #2f6b55;
+  --accent-dark: #22513f;
+  --border: #b9dccd;
+  --radius: 14px;
+  --shadow: 0 4px 14px rgba(30, 60, 45, 0.10);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Nunito", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--page-bg);
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2 {
+  font-family: "Fraunces", Georgia, serif;
+  line-height: 1.2;
+  color: var(--accent-dark);
+}
+
+/* ----- Title bar ----- */
+.site-header {
+  background: var(--title-bar);
+  text-align: center;
+  padding: 22px 16px 16px;
+}
+.site-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+}
+.tagline {
+  margin: 4px 0 0;
+  color: #2a2d29;
+  font-weight: 600;
+}
+
+/* ----- Navigation bar ----- */
+.site-nav {
+  background: var(--nav-bar);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.nav-links {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  max-width: 1200px;
+}
+.nav-links > li { position: relative; }
+
+.nav-links a,
+.dropdown-toggle {
+  display: block;
+  padding: 12px 20px;
+  font: inherit;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.nav-links a:hover,
+.dropdown-toggle:hover,
+.nav-links a.active,
+.dropdown-toggle.active {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* Recipes dropdown */
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 440px;
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+.dropdown-menu a {
+  padding: 8px 12px;
+  font-weight: 600;
+}
+.dropdown-menu a:hover,
+.dropdown-menu a.active {
+  background: var(--page-bg);
+}
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown.open .dropdown-menu {
+  display: grid;
+}
+.arrow { font-size: 0.8em; }
+
+/* Mobile menu button (hidden on big screens) */
+.menu-toggle {
+  display: none;
+  width: 100%;
+  padding: 12px 16px;
+  font: inherit;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* ----- Buttons ----- */
+.btn {
+  display: inline-block;
+  padding: 11px 24px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn:hover { background: var(--accent-dark); }
+
+/* ----- Photos ----- */
+.photo {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--border);
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.photo:hover img { transform: scale(1.04); }
+
+/* Shown by script.js when a photo file is missing */
+.photo-missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 160px;
+  padding: 16px;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ----- Footer ----- */
+.site-footer {
+  text-align: center;
+  padding: 20px 16px;
+  background: var(--nav-bar);
+  font-size: 0.95rem;
+  margin-top: 40px;
+}
+.site-footer p { margin: 0; }
+.site-footer .credits {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.site-footer a { color: inherit; }
+
+/* ----- Mobile nav ----- */
+@media (max-width: 760px) {
+  .menu-toggle { display: block; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    padding: 0 12px 12px;
+    gap: 2px;
+  }
+  .site-nav.open .nav-links { display: flex; }
+  .dropdown-toggle { width: 100%; text-align: left; }
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    width: 100%;
+    box-shadow: none;
+    grid-template-columns: 1fr 1fr;
+  }
+  /* on phones the dropdown opens by tapping, not hovering */
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu { display: none; }
+  .dropdown.open .dropdown-menu { display: grid; }
+}
+
+/* =========================================================
+   HOMEPAGE STYLES
+   ========================================================= */
+
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px 0;
+}
+
+/* Top row: text | text | picture */
+.intro-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.text-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 26px;
+}
+.text-card h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+.text-card .btn { margin-top: 6px; }
+
+.photo-tall { min-height: 320px; }
+
+/* Bottom row: three pictures */
+.photo-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+.photo-row .photo { height: 260px; }
+
+/* ----- Recipe cards ----- */
+.recipe-cards {
+  margin-top: 48px;
+  scroll-margin-top: 70px;
+}
+.recipe-cards > h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 0 24px;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.recipe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(30, 60, 45, 0.16);
+}
+.recipe-card .photo {
+  height: 170px;
+  border-radius: 0;
+  box-shadow: none;
+}
+.rc-body { padding: 14px 16px 18px; }
+.rc-body h3 {
+  margin: 0 0 4px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.2rem;
+  color: var(--accent-dark);
+}
+.rc-body p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.disclaimer {
+  margin: 28px auto 0;
+  max-width: 760px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+  .intro-row { grid-template-columns: 1fr 1fr; }
+  .photo-tall { grid-column: 1 / -1; height: 300px; min-height: 0; }
+}
+
+/* Phone */
+@media (max-width: 700px) {
+  .intro-row,
+  .photo-row { grid-template-columns: 1fr; }
+  .photo-row .photo { height: 220px; }
+  .card-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .recipe-card .photo { height: 120px; }
+  .rc-body { padding: 10px 12px 14px; }
+  .rc-body p { display: none; }
+}

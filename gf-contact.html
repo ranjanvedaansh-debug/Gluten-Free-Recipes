@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Send feedback or ask a question about gluten-free cooking.">
+  <title>Contact | Gluten Free, Full of Flavour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+  <!-- ===== Title bar ===== -->
+  <header class="site-header">
+    <a href="index.html" class="site-title">Gluten Free, Full of Flavour</a>
+    <p class="tagline">Simple gluten-free recipes that actually taste good</p>
+  </header>
+
+  <!-- ===== Navigation bar ===== -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">&#9776; Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <button class="dropdown-toggle" aria-expanded="false">Recipes <span class="arrow">&#9662;</span></button>
+        <ul class="dropdown-menu">
+          <li><a href="quesadilla.html">Quesadilla</a></li>
+          <li><a href="vanilla-cake.html">Vanilla Cake</a></li>
+          <li><a href="orange-cake.html">Orange Cake</a></li>
+          <li><a href="peanut-butter-cookies.html">Peanut Butter Cookies</a></li>
+          <li><a href="honey-chilli-potato.html">Honey Chilli Potato</a></li>
+          <li><a href="ragi-cookies.html">Ragi Cookies</a></li>
+          <li><a href="ragi-cupcakes.html">Ragi Cupcakes</a></li>
+          <li><a href="paneer-roll.html">Paneer Roll</a></li>
+          <li><a href="chicken-roll.html">Chicken Roll</a></li>
+          <li><a href="paneer-cubes.html">Paneer Cubes</a></li>
+          <li><a href="pizza.html">Pizza</a></li>
+          <li><a href="bread-squares.html">Bread Squares</a></li>
+        </ul>
+      </li>
+      <li><a href="gf-contact.html" class="active" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Main content ===== -->
+  <main class="contact">
+    <div class="contact-layout">
+
+      <section class="card form-card">
+        <h1>Feedback &amp; Queries</h1>
+        <p class="lead">Tried a recipe? Have a question about gluten-free cooking, or an idea for a recipe you'd like to see? I'd love to hear from you!</p>
+
+        <!-- Formspree form: messages go to the email on your Formspree account -->
+        <form class="contact-form" action="https://formspree.io/f/mrpeawjb" method="POST">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Priya" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="field">
+            <label for="type">What is it about?</label>
+            <select id="type" name="type" required>
+              <option value="" disabled selected>Choose one</option>
+              <option value="Feedback">Feedback on a recipe</option>
+              <option value="Query">A question / query</option>
+              <option value="Recipe request">Recipe request</option>
+              <option value="Other">Something else</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn">Send message</button>
+        </form>
+      </section>
+
+      <div class="contact-photos">
+        <figure class="photo"><img src="https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?auto=format&fit=crop&w=1200&q=80" alt="A blue bowl filled with vegetables and a wooden spoon" loading="lazy"></figure>
+        <figure class="photo"><img src="https://images.unsplash.com/photo-1436565121087-bb8d210c9752?auto=format&fit=crop&w=1200&q=80" alt="Cookies and daffodils on a plate" loading="lazy"></figure>
+        <figure class="photo"><img src="https://images.unsplash.com/photo-1540914124281-342587941389?auto=format&fit=crop&w=1200&q=80" alt="Toast topped with avocado, banana and tomatoes" loading="lazy"></figure>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <p>Gluten Free, Full of Flavour</p>
+  
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
